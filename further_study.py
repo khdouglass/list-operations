@@ -119,7 +119,11 @@ def custom_remove(input_list, value):
 
     """
 
-    pass
+
+    x = input_list.index(value)
+
+    input_list[:x+1] = input_list[:x]
+
 
 
 def custom_pop(input_list):
@@ -138,7 +142,11 @@ def custom_pop(input_list):
 
     """
 
-    return None
+    new = input_list[-1]
+
+    input_list[-2:] = input_list[-2:-1]
+
+    return new
 
 
 def custom_index(input_list, value):
