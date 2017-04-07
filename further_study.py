@@ -120,7 +120,12 @@ def custom_remove(input_list, value):
     """
 
 
-    x = input_list.index(value)
+    # x = input_list.index(value)
+
+    for i in range(len(input_list)):
+        if input_list[i] == value:
+            x = i
+            break
 
     input_list[:x+1] = input_list[:x]
 
@@ -182,8 +187,11 @@ def custom_count(input_list, value):
         2
 
     """
-
-    return 0
+    counter = 0
+    for i in input_list:
+        if i == value:
+            counter += 1
+    return counter
 
 
 def custom_reverse(input_list):
@@ -202,7 +210,7 @@ def custom_reverse(input_list):
 
     """
 
-    pass
+    input_list[:] = input_list[::-1]
 
 
 def custom_contains(input_list, value):
@@ -221,8 +229,14 @@ def custom_contains(input_list, value):
         True
 
     """
-
-    return None
+    counter = 0
+    for i in input_list:
+        if i == value:
+            counter += 1
+    if counter > 0:
+        return True
+    else:
+        return False
 
 
 def custom_equality(some_list, another_list):
@@ -241,7 +255,14 @@ def custom_equality(some_list, another_list):
 
     """
 
-    return None
+    counter = 0
+    for i in range(len(some_list)):
+        if some_list[i] == another_list[i]:
+            counter += 1
+    if counter == len(some_list):
+        return True
+    else:
+        return False
 
 
 ##############################################################################
